@@ -1,4 +1,7 @@
 import os
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
+os.environ["CHROMA_TELEMETRY"] = "FALSE"
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 from groq import Groq
@@ -8,9 +11,6 @@ from cryptography.fernet import Fernet
 
 # ------------------------------------------------------------
 # ENV + GLOBAL CONFIG
-# ------------------------------------------------------------
-os.environ["STREAMLIT_WATCHER_TYPE"] = "none"  # avoid watcher issues on Windows
-os.environ["CHROMA_TELEMETRY"] = "FALSE"       # silence telemetry warnings
 
 MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
 CHROMA_DB_PATH = "chroma_db"

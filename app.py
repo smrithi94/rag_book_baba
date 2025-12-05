@@ -18,7 +18,7 @@ CHROMA_DB_PATH = "chroma_db"
 COLLECTION_NAME = "my_book_chunks"
 MAX_MEMORY = 6  # chat history limit
 
-if not os.path.exists("chroma_db") or len(os.listdir("chroma_db")) == 0:
+if (not os.path.exists("chroma_db")) or (len(os.listdir("chroma_db")) == 0):
     import chroma_rebuild
 # ------------------------------------------------------------
 # Load Environment & Groq API Key (with optional decryption)
